@@ -1,0 +1,374 @@
+/* GENERAL */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+/* HEADER */
+.site-header {
+    background: linear-gradient(135deg,
+            #3f443f 0%,
+            #585e59 40%,
+            #3a3f3b 100%);
+    border-bottom: 4px solid #09A733;
+    padding: 1.6rem 0;
+}
+
+/* Branding */
+.header-brand {
+    text-align: center;
+}
+
+.site-title {
+    font-size: 2.5rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+    color: #f5f5f5;
+    margin: 0;
+    cursor: default;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+/* Hover jaune sur GaSo&Co */
+.site-title:hover {
+    color: #ffc107;
+    /* jaune Bootstrap */
+    text-shadow: 0 0 8px rgba(255, 193, 7, 0.4);
+}
+
+.site-tagline {
+    font-size: 0.85rem;
+    color: #d1d1d1;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* NAV */
+.site-nav {
+    display: flex;
+    gap: 1.3rem;
+    margin-top: 1rem;
+}
+
+.site-nav .nav-link {
+    position: relative;
+    color: #f5f5f5;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.3rem 0;
+    transition: color 0.3s;
+}
+
+/* underline animé */
+.site-nav .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0;
+    height: 2px;
+    background-color: #09A733;
+    transition: width 0.3s ease;
+}
+
+.site-nav .nav-link:hover {
+    color: #09A733;
+}
+
+.site-nav .nav-link:hover::after {
+    width: 100%;
+}
+
+/* RESPONSIVE */
+@media (min-width: 768px) {
+    .header-brand {
+        text-align: left;
+    }
+
+    .site-nav {
+        margin-top: 0;
+    }
+}
+/* HERO SECTION */
+.hero-section {
+    position: relative;
+    background: linear-gradient(135deg,
+            #3f443f 0%,
+            #585e59 45%,
+            #3a3f3b 100%);
+    border-radius: 14px;
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    overflow: hidden;
+}
+
+/* léger effet de texture lumineuse */
+.hero-section::before {
+    content: "";
+    position: absolute;
+    top: -30%;
+    left: -20%;
+    width: 150%;
+    height: 150%;
+    background: radial-gradient(circle at top left,
+            rgba(255, 193, 7, 0.12),
+            transparent 60%);
+    pointer-events: none;
+}
+
+/* Texte dans hero-section */
+.hero-section h1 {
+    margin-bottom: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.hero-section p {
+    font-size: 1.15rem;
+    margin-bottom: 1rem;
+    opacity: 0.9;
+}
+
+/* Nom GaSo&Co */
+.hero-section h2 {
+    font-size: 5rem;
+    font-weight: 900;
+    line-height: 1.1;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+/* micro effet au survol */
+.hero-section h2:hover {
+    transform: scale(1.02);
+    text-shadow: 0 0 12px rgba(255, 193, 7, 0.35);
+}
+
+/* Image */
+.hero-section img {
+    max-width: 20rem;
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 8px 15px rgba(0, 0, 0, 0.35));
+    transition: transform 0.4s ease;
+}
+
+.hero-section img:hover {
+    transform: translateY(-6px) scale(1.03);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .hero-section h2 {
+        font-size: 3.5rem;
+    }
+}
+/* SECTIONS */
+.projects,
+.skills,
+.references {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* ITEMS (projects, skills, references) */
+.project-item,
+.skill-item,
+.reference-item {
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+/* Hover sur items 
+.project-item:hover,
+.skill-item:hover,
+.reference-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+*/
+
+/* Images dans items */
+.project-item img,
+.skill-item img,
+.reference-item img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 0.5rem;
+}
+/* FOOTER */
+.site-footer {
+    background-color: #585e59;
+    /* vert principal */
+    color: #fff;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    box-shadow: 0 -3px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Liens dans le footer */
+.site-footer a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.site-footer a:hover {
+    color: #ffc107;
+    /* accent jaune au survol */
+}
+
+/* Petits ajustements responsive */
+@media (max-width: 576px) {
+    .site-footer p {
+        font-size: 0.85rem;
+    }
+}
+/* BLOG */
+/* BLOG CARD */
+.blog-article {
+    background: linear-gradient(145deg, #ffffff, #f9f9f9);
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+/* Hover effet */
+.blog-article:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Wrapper pour image */
+.blog-img-wrapper {
+    padding: 0;
+    overflow: hidden;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* IMAGE */
+.blog-img {
+    width: 100%;
+    max-height: 180px;
+    /* limite la hauteur */
+    object-fit: contain;
+    /* garde l'image entière */
+    transition: transform 0.4s ease;
+}
+
+/* Zoom léger au hover */
+.blog-article:hover .blog-img {
+    transform: scale(1.05);
+}
+
+/* CONTENU */
+.blog-article .p-4 {
+    padding: 1.5rem;
+}
+
+/* TITRE */
+.blog-article h2 {
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+}
+
+/* TEXTE */
+.blog-article p {
+    font-size: 0.95rem;
+    color: #444;
+    margin-bottom: 0.75rem;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .blog-img {
+        max-height: 120px;
+    }
+}
+/* Legal section */
+.legal-section {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.legal-section h1 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.legal-section h2 {
+    font-size: 1.5rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #585e59;
+}
+
+.legal-section p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.legal-section a {
+    color: #09A733;
+    text-decoration: none;
+}
+
+.legal-section a:hover {
+    text-decoration: underline;
+}
+
+/* SECTION LEGAL */
+.legal-section {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    margin-bottom: 3rem;
+}
+
+.legal-section h1,
+.legal-section h2 {
+    color: #585e59;
+}
+
+.legal-section p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+.legal-section a {
+    color: #09A733;
+    text-decoration: none;
+}
+
+.legal-section a:hover {
+    text-decoration: underline;
+}
+
+
+
+/* TYPO */
+.text-center {
+    text-align: center;
+}
