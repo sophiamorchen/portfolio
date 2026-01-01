@@ -13,25 +13,35 @@
             </p>
 
             <h2 class="text-warning mt-3 display-1">GaSo&Co</h2>
-            <hr class="hero-devis-separator">
-            
-
-            <!-- SECTION DEVIS -->
-            <div class="hero-devis mt-4">
-                <h3 class="text-warning">DEVIS GRATUIT</h3>
-                <p class="fw-bold mt-2">
-                    Que ce soit pour un petit jardin ou un chantier complet, nous réalisons un devis précis, clair et <strong>personnalisé</strong> pour tous vos projets.
-                </p>
-                <img src="/img/blog/devis.jpg" alt="Devis pour travaux" class="hero-devis-img rounded img-fluid mt-3">
-                <a href="/pages/contact.php" class="btn btn-warning btn-lg mt-3 hero-devis-btn">
-                    Demandez votre devis
-                </a>
-            </div>
         </div>
-
-        <!-- IMAGE PRINCIPALE -->
         <img src="img/tailleHaie.png" alt="photo tailleur de haie" class="rounded img-fluid" style="max-width:15rem;">
     </section>
+
+
+    <!-- SECTION DEVIS -->
+
+    <section class="hero-devis-section text-center mt-5">
+        <div class="hero-devis-box mx-auto">
+
+            <h3 class="text-warning">Devis gratuit & personnalisé</h3>
+
+            <p class="mt-3">
+                Du simple entretien de jardin au chantier complet,
+                nous étudions chaque projet avec sérieux et transparence.
+            </p>
+
+            <img src="/img/blog/devis.jpg"
+                alt="Devis pour travaux"
+                class="img-fluid rounded mt-4">
+
+            <a href="/pages/contact.php"
+                class="btn btn-warning btn-lg mt-4">
+                Demander mon devis
+            </a>
+
+        </div>
+    </section>
+
 
 
 
@@ -100,8 +110,8 @@
         <div class="list-maintenance d-flex flex-wrap gap-4 justify-content-center fw-bold">
             <article class="maintenance-item">
                 <img src="/img/blog/entretien-exterieur.jpg" alt="Taille de haies" class="maintenance-img">
-                <p class="maintenance-name">Taille de haies</p>
-                <p class="maintenance-desc">Élagage et taille de haies pour des jardins soignés, sécurisés et esthétiques.</p>
+                <p class="maintenance-name">Entretien espaces verts</p>
+                <p class="maintenance-desc">Élagage et taille de haies, tonte, labourage etc....</p>
             </article>
 
             <article class="maintenance-item">
@@ -118,7 +128,7 @@
 
             <article class="maintenance-item">
                 <img src="/img/blog/gants-tournevis.jpg" alt="Réparations intérieures" class="maintenance-img">
-                <p class="maintenance-name">Réparations et finitions</p>
+                <p class="maintenance-name">Réparations et bricolage</p>
                 <p class="maintenance-desc">Carrelage, parquet, peinture et petites réparations pour vos espaces intérieurs et extérieurs.</p>
             </article>
 

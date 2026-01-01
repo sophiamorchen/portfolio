@@ -4,7 +4,7 @@
             <p><strong>GaSo&Co</strong> - SIRET : 990 761 439 00027 - PUYOO (64)</p>
         </div>
         <div>
-            <p><strong>Contact</strong> - 07 66 81 56 11 - 07 66 57 12 89 - <a href="mailto:gaso.co64@gmail.com">gaso.co64@gmail.com</a></p>
+            <p class="fw-bold"><strong>Contact</strong> - 07 66 81 56 11 - 07 66 57 12 89 - <a href="mailto:gaso.co64@gmail.com">gaso.co64@gmail.com</a></p>
         </div>
         <div>
 

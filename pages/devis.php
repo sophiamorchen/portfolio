@@ -78,12 +78,12 @@
     </section>
 
     <!-- CONFIANCE -->
-    <section class="devis-reassurance text-center rounded p-2">
+    <section class="devis-reassurance text-center rounded">
         <h3 class="text-warning mb-3">Pourquoi choisir GaSo&Co ?</h3>
 
         <p class="mx-auto fw-bold">
             Nous intervenons pour des projets simples comme complexes :
-            entretien régulier, prestations ponctuelles, location courte ou longue durée,
+            entretiens réguliers, prestations ponctuelles, locations courte ou longue durée,
             petits travaux ou chantiers plus conséquents.
             <br><br>
             Chaque demande est étudiée avec sérieux afin de vous proposer
