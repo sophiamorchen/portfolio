@@ -20,12 +20,14 @@
 
             <div class="header-brand">
                 <h1 class="site-title">GaSo&Co</h1>
-                <span class="site-tagline">Entretien extérieur & location de matériel</span>
+                <span class="site-tagline">Entretien, bricolage & location de matériel professionnel</span>
             </div>
 
             <nav class="site-nav">
                 <a href="/" class="nav-link">Accueil</a>
-                <a href="/pages/projects.php" class="nav-link">Prestations</a>
+                <a href="/pages/projects.php" class="nav-link">Services</a>
+                <a href="/pages/projects.php" class="nav-link">Location de matériel</a>
+                <a href="/pages/devis.php" class="nav-link">Devis gratuit</a>
                 <a href="/pages/blog.php" class="nav-link">Blog</a>
                 <a href="/pages/contact.php" class="nav-link">Contact</a>
             </nav>

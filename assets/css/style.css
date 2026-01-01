@@ -1,4 +1,4 @@
-/* GENERAL */
+/* --------------------------- GENERAL --------------------------- */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f5f5f5;
@@ -6,15 +6,66 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
+
+    position: relative;
+    z-index: 1;
+
+    /* Fond discret */
+    background-image: url('/img/blog/background-snipper.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
-/* HEADER */
+/* Fond flou subtil via pseudo-element, sans bloquer le scroll */
+body::before {
+    content: "";
+    position: fixed;
+    /* reste derrière le contenu */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: inherit;
+    /* reprend la même image */
+    background-size: cover;
+    background-position: center;
+    filter: blur(3px) brightness(0.9);
+    /* flou léger et un voile sombre pour le contraste */
+    z-index: -1;
+    /* derrière tout le contenu */
+}
+
+/* TYPO */
+.text-center {
+    text-align: center;
+}
+
+
+/* Variante pour un flou plus discret et teinte claire */
+main::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.05);
+    /* très léger voile blanc */
+    /* flou du fond */
+    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(3px);
+    z-index: -1;
+    /* derrière le contenu */
+}
+/* --------------------------- FIN MAIN ---------------------------*/
+/* --------------------------- HEADER ---------------------------*/
 .site-header {
     background: linear-gradient(135deg,
             #3f443f 0%,
             #585e59 40%,
             #3a3f3b 100%);
-    border-bottom: 4px solid #09A733;
+    border-bottom: 4px solid #75af08;
     padding: 1.6rem 0;
 }
 
@@ -27,7 +78,7 @@ body {
     font-size: 2.5rem;
     font-weight: 900;
     letter-spacing: 2px;
-    color: #f5f5f5;
+    color: #b6aa0a;
     margin: 0;
     cursor: default;
     transition: color 0.3s ease, text-shadow 0.3s ease;
@@ -42,7 +93,7 @@ body {
 
 .site-tagline {
     font-size: 0.85rem;
-    color: #d1d1d1;
+    color: #d6da0a;
     letter-spacing: 1px;
     text-transform: uppercase;
 }
@@ -56,7 +107,7 @@ body {
 
 .site-nav .nav-link {
     position: relative;
-    color: #f5f5f5;
+    color: #ffc107;
     text-decoration: none;
     font-weight: 600;
     padding: 0.3rem 0;
@@ -71,12 +122,12 @@ body {
     bottom: -4px;
     width: 0;
     height: 2px;
-    background-color: #09A733;
+    background-color: #75af08;
     transition: width 0.3s ease;
 }
 
 .site-nav .nav-link:hover {
-    color: #09A733;
+    color: #75af08;
 }
 
 .site-nav .nav-link:hover::after {
@@ -93,22 +144,34 @@ body {
         margin-top: 0;
     }
 }
-/* HERO SECTION */
-.hero-section {
+
+/* --------------------------- FIN HEADER --------------------------- */
+
+/* --------------------------- HERO SECTION --------------------------- */
+
+/* FOND COMMUN HERO, LOCATION ET MAINTENANCE - légèrement plus transparent */
+.hero-section,
+.location,
+.maintenance {
     position: relative;
     background: linear-gradient(135deg,
-            #3f443f 0%,
-            #585e59 45%,
-            #3a3f3b 100%);
+            rgba(63, 68, 63, 0.7) 0%,
+            /* légèrement plus transparent */
+            rgba(88, 94, 89, 0.7) 45%,
+            rgba(58, 63, 59, 0.7) 100%);
     border-radius: 14px;
     box-shadow:
         0 10px 25px rgba(0, 0, 0, 0.15),
         inset 0 1px 0 rgba(255, 255, 255, 0.05);
     overflow: hidden;
+    padding: 2rem;
+    /* adapte selon la section */
 }
 
 /* léger effet de texture lumineuse */
-.hero-section::before {
+.hero-section::before,
+.location::before,
+.maintenance::before {
     content: "";
     position: absolute;
     top: -30%;
@@ -116,10 +179,21 @@ body {
     width: 150%;
     height: 150%;
     background: radial-gradient(circle at top left,
-            rgba(255, 193, 7, 0.12),
+            rgba(255, 193, 7, 0.06),
+            /* encore plus subtil */
             transparent 60%);
     pointer-events: none;
+    z-index: 0;
 }
+
+/* Contenu au-dessus du fond et du halo */
+.hero-section>*,
+.location>*,
+.maintenance>* {
+    position: relative;
+    z-index: 1;
+}
+
 
 /* Texte dans hero-section */
 .hero-section h1 {
@@ -132,6 +206,7 @@ body {
     font-size: 1.15rem;
     margin-bottom: 1rem;
     opacity: 0.9;
+    color: rgba(255, 255, 255, 0.88);
 }
 
 /* Nom GaSo&Co */
@@ -144,7 +219,7 @@ body {
     transition: transform 0.3s ease, text-shadow 0.3s ease;
 }
 
-/* micro effet au survol */
+/* petit effet au survol */
 .hero-section h2:hover {
     transform: scale(1.02);
     text-shadow: 0 0 12px rgba(255, 193, 7, 0.35);
@@ -169,175 +244,289 @@ body {
         font-size: 3.5rem;
     }
 }
-/* SECTIONS */
-.projects,
-.skills,
-.references {
-    background-color: #ffffff;
-    border-radius: 10px;
-    padding: 2rem;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+
+/* --------------------------- FIN HERO --------------------------- */
+
+/* --------------------------- HERO DEVIS --------------------------- */
+/* Séparateur devis */
+.hero-devis-separator {
+    width: 60%;
+    margin: 2rem auto 1.5rem;
+    border: none;
+    height: 1px;
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(255, 193, 7, 0.6),
+            transparent);
 }
 
-/* ITEMS (projects, skills, references) */
-.project-item,
-.skill-item,
-.reference-item {
-    background-color: #f0f0f0;
-    border-radius: 10px;
-    padding: 1rem;
+/* Flèche vers le devis */
+.hero-devis-arrow {
     text-align: center;
-    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-/* Hover sur items 
-.project-item:hover,
-.skill-item:hover,
-.reference-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-}
-*/
-
-/* Images dans items */
-.project-item img,
-.skill-item img,
-.reference-item img {
-    max-width: 100%;
-    border-radius: 10px;
-    margin-bottom: 0.5rem;
-}
-/* FOOTER */
-.site-footer {
-    background-color: #585e59;
-    /* vert principal */
-    color: #fff;
-    font-size: 0.9rem;
-    line-height: 1.5;
-    box-shadow: 0 -3px 10px rgba(0, 0, 0, 0.05);
-}
-
-/* Liens dans le footer */
-.site-footer a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s;
-}
-
-.site-footer a:hover {
+    font-size: 2rem;
     color: #ffc107;
-    /* accent jaune au survol */
+    margin: 1.5rem 0;
+    animation: arrow-bounce 1.8s infinite;
 }
 
-/* Petits ajustements responsive */
-@media (max-width: 576px) {
-    .site-footer p {
-        font-size: 0.85rem;
+/* Animation douce */
+@keyframes arrow-bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(6%);
     }
 }
-/* BLOG */
-/* BLOG CARD */
-.blog-article {
-    background: linear-gradient(145deg, #ffffff, #f9f9f9);
-    border-radius: 16px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-    overflow: hidden;
-    transition: transform 0.35s ease, box-shadow 0.35s ease;
+.hero-devis {
+    text-align: center;
 }
 
-/* Hover effet */
-.blog-article:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.15);
+.hero-devis h3 {
+    margin-bottom: 0.5rem;
 }
 
-/* Wrapper pour image */
-.blog-img-wrapper {
-    padding: 0;
-    overflow: hidden;
-    border-bottom: 1px solid #eee;
+.hero-devis p {
+    font-size: 1rem;
+    line-height: 1.4;
+    margin-bottom: 1rem;
+}
+
+/* Bouton devis */
+.hero-devis-btn {
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-devis-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(255, 193, 7, 0.4);
+}
+
+/* Image devis sous le texte */
+.hero-devis-img {
+    max-width: 300px;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 0 auto;
+}
+
+.hero-devis-img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+
+/* --------------------------- FIN HERO DEVIS --------------------------- */
+
+
+/* --------------------------- SECTION OUTILS EN LOCATION --------------------------- */
+.list-tools {
     display: flex;
-    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
     justify-content: center;
 }
 
-/* IMAGE */
-.blog-img {
+.tools {
+    flex: 1 1 200px;
+    /* minimum 200px, prend l'espace disponible */
+    max-width: 300px;
+    /* limite sur grand écran */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    background-color: #90af08ad;
+    transition: transform 0.3s ease;
+}
+
+.tools:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Image responsive */
+.tools .tool-img {
     width: 100%;
-    max-height: 180px;
-    /* limite la hauteur */
-    object-fit: contain;
-    /* garde l'image entière */
-    transition: transform 0.4s ease;
+    height: auto;
+    display: block;
 }
 
-/* Zoom léger au hover */
-.blog-article:hover .blog-img {
-    transform: scale(1.05);
+/* Nom de l'outil */
+.tools .tool-name {
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    margin: 0.5rem 0 0.25rem;
 }
 
-/* CONTENU */
-.blog-article .p-4 {
-    padding: 1.5rem;
+/* Description sous le nom */
+.tools .tool-desc {
+    font-size: 0.9rem;
+    color: #555;
+    text-align: center;
+    padding: 0 0.5rem 0.5rem;
 }
 
-/* TITRE */
-.blog-article h2 {
-    font-weight: 700;
-    margin-bottom: 0.75rem;
-}
-
-/* TEXTE */
-.blog-article p {
-    font-size: 0.95rem;
-    color: #444;
-    margin-bottom: 0.75rem;
-}
-
-/* MOBILE */
+/* Responsive */
 @media (max-width: 768px) {
-    .blog-img {
-        max-height: 120px;
+    .tools {
+        flex: 1 1 45%;
+        /* deux cartes par ligne sur tablette */
     }
 }
-/* Legal section */
-.legal-section {
-    background-color: #ffffff;
-    border-radius: 10px;
-    padding: 2rem;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+
+@media (max-width: 480px) {
+    .tools {
+        flex: 1 1 90%;
+        /* une carte par ligne sur mobile */
+    }
 }
 
-.legal-section h1 {
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
+/* --------------------------- FIN SECTION OUTILS EN LOCATION --------------------------- */
+
+/* --------------------------- SECTION MAINTENANCE CARDS --------------------------- */
+.list-maintenance {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2vw;
+    /* espace flexible entre les cartes */
+    justify-content: center;
+}
+
+.maintenance-item {
+    flex: 1 1 18%;
+    max-width: 300px;
+    border-radius: 0.625rem;
+    box-shadow: 0 0.2rem 0.6rem rgba(0, 0, 0, 0.1);
+    /* effet léger */
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #90af08ad;
+    display: flex;
+    flex-direction: column;
+}
+
+.maintenance-item:hover {
+    transform: translateY(-0.3rem);
+    box-shadow: 0 0.4rem 0.9rem rgba(0, 0, 0, 0.15);
+}
+
+.maintenance-img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    /* hauteur proportionnelle à la largeur */
+    object-fit: cover;
+    border-radius: 0.625rem 0.625rem 0 0;
+}
+
+.maintenance-name {
     text-align: center;
+    margin-top: 0.5rem;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #333;
 }
 
-.legal-section h2 {
-    font-size: 1.5rem;
-    margin-top: 1.5rem;
+.maintenance-desc {
+    text-align: center;
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+    color: #555;
+    flex-grow: 1;
+}
+
+@media (max-width: 1024px) {
+    .maintenance-item {
+        flex: 1 1 28%;
+    }
+}
+
+@media (max-width: 768px) {
+    .maintenance-item {
+        flex: 1 1 45%;
+    }
+}
+
+@media (max-width: 480px) {
+    .maintenance-item {
+        flex: 1 1 90%;
+    }
+
+    .maintenance-desc {
+        font-size: 0.95rem;
+        padding: 0.75rem 1rem;
+    }
+}
+
+/* --------------------------- FIN MAINTENANCE CARDS --------------------------- */
+
+
+
+/* --------------------------- BLOG --------------------------- */
+
+.blog-hero {
+    max-width: 900px;
+    margin: 0 auto;
+}
+.blog-hero p {
+    color: rgba(255, 255, 255, 0.88);
+}
+
+.blog-hero p:last-child {
+    color: rgba(255, 255, 255, 0.72);
+}
+
+/* Cartes articles */
+.blog-card {
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* Image */
+.blog-card-img {
+    flex: 1;
+    min-height: 100%;
+}
+
+.blog-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Contenu */
+.blog-card-content {
+    flex: 1.2;
+    color: #2f3431;
+}
+
+.blog-card-content h2 {
+    color: #2f3431;
     margin-bottom: 0.5rem;
-    color: #585e59;
+}
+.blog-card-content p {
+    color: #5f665f;
 }
 
-.legal-section p {
-    font-size: 1rem;
+.blog-meta {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #8a8f8b;
     margin-bottom: 1rem;
-    line-height: 1.6;
 }
 
-.legal-section a {
-    color: #09A733;
-    text-decoration: none;
-}
+/* --------------------------- FIN BLOG --------------------------- */
 
-.legal-section a:hover {
-    text-decoration: underline;
-}
-
-/* SECTION LEGAL */
+/* --------------------------- SECTION LEGAL --------------------------- */
 .legal-section {
     background-color: #ffffff;
     border-radius: 10px;
@@ -366,9 +555,72 @@ body {
     text-decoration: underline;
 }
 
+/* --------------------------- FIN SECTION LEGAL --------------------------- */
 
+/* --------------------------- PAGE DEVIS --------------------------- */
 
-/* TYPO */
-.text-center {
-    text-align: center;
+.devis-hero {
+    max-width: 900px;
+    margin: 0 auto;
 }
+
+.devis-highlights span {
+    background: rgba(255, 193, 7, 0.15);
+    padding: 0.6rem 1.2rem;
+    border-radius: 999px;
+    font-weight: 600;
+    color: #ffc107;
+}
+
+/* FORMULAIRE */
+.devis-form {
+    max-width: 720px;
+    background: rgba(255, 255, 255, 0.85);
+    padding: 2rem;
+    border-radius: 14px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* REASSURANCE */
+.devis-reassurance {
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    background: rgba(255, 255, 255, 0.85);
+
+}
+
+.devis-reassurance p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+/* --------------------------- FIN PAGE DEVIS --------------------------- */
+
+/* --------------------------- FOOTER --------------------------- */
+.site-footer {
+    background-color: #585e59;
+    color: #75af08;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    box-shadow: 0 -3px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Liens dans le footer */
+.site-footer a {
+    color: #75af08;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.site-footer a:hover {
+    color: #ffc107;
+}
+
+/* Petits ajustements responsive */
+@media (max-width: 576px) {
+    .site-footer p {
+        font-size: 0.85rem;
+    }
+}
+
+/* --------------------------- FIN FOOTER ---------------------------*/

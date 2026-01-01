@@ -3,29 +3,134 @@
 
 <main class="container my-5">
     <!-- HERO SECTION -->
+
     <section class="hero-section d-flex flex-column flex-md-row align-items-center gap-4 p-4 shadow-sm">
+
         <div class="flex-fill text-center">
-            <h1 class="text-warning">Faites de vos idées des projets, nous sommes là pour les réaliser.</h1>
-            <p class="text-warning">Votre partenaire pour l’entretien extérieur et la location de matériel</p>
+            <h1 class="text-warning">Des outils et du savoir-faire pour chaque projet</h1>
+            <p class="fw-bold mt-3">
+                Espaces verts, bricolage, chantiers : GaSo&Co vous accompagne avec du matériel performant et des solutions adaptées à tous vos besoins.
+            </p>
+
             <h2 class="text-warning mt-3 display-1">GaSo&Co</h2>
+            <hr class="hero-devis-separator">
+            
+
+            <!-- SECTION DEVIS -->
+            <div class="hero-devis mt-4">
+                <h3 class="text-warning">DEVIS GRATUIT</h3>
+                <p class="fw-bold mt-2">
+                    Que ce soit pour un petit jardin ou un chantier complet, nous réalisons un devis précis, clair et <strong>personnalisé</strong> pour tous vos projets.
+                </p>
+                <img src="/img/blog/devis.jpg" alt="Devis pour travaux" class="hero-devis-img rounded img-fluid mt-3">
+                <a href="/pages/contact.php" class="btn btn-warning btn-lg mt-3 hero-devis-btn">
+                    Demandez votre devis
+                </a>
+            </div>
         </div>
+
+        <!-- IMAGE PRINCIPALE -->
         <img src="img/tailleHaie.png" alt="photo tailleur de haie" class="rounded img-fluid" style="max-width:15rem;">
     </section>
 
-    <!-- PROJECTS SECTION -->
-    <section class="projects d-flex flex-wrap gap-4 mt-5">
-        PROJECTS
+
+
+    <!-- SECTION LOCATION DE MATÉRIEL -->
+    <section class="location d-flex flex-column flex-wrap gap-4 mt-5">
+        <!-- Titre principal -->
+        <h2 class="text-warning text-center mb-4">Location de matériel</h2>
+
+        <!-- Texte introductif -->
+        <p class="lead text-center mt-3 text-warning">
+            Que ce soit pour le jardin, le bricolage ou vos petits et gros chantiers,
+            <strong>GaSo&Co</strong> vous propose une large gamme de matériel performant et entretenu.
+            Tondeuses, taille-haies, débroussailleuses, mini-pelles, camions-bennes et plus encore :
+            nous avons l’outil qu’il vous faut. Tous nos devis sont gratuits et personnalisés pour vos besoins.
+        </p>
+
+        <!-- Liste des outils -->
+        <div class="list-tools fw-bold">
+            <article class="tools">
+                <img src="/img/blog/fendeuse.jpg" alt="Fendeuse" class="tool-img">
+                <p class="tool-name">Motobineuse fraise arrière</p>
+                <p class="tool-desc">Marque Roques et Lecoeur : idéale pour fendre le bois rapidement et efficacement.</p>
+            </article>
+
+            <article class="tools">
+                <img src="/img/blog/debroussailleuse.jpg" alt="Débroussailleuse" class="tool-img">
+                <p class="tool-name">Débroussailleuse</p>
+                <p class="tool-desc">Maruyama : parfaite pour débroussailler les terrains difficiles et les herbes hautes.</p>
+            </article>
+
+            <article class="tools">
+                <img src="/img/blog/souffleur-feuilles.jpg" alt="Souffleur" class="tool-img">
+                <p class="tool-name">Souffleur</p>
+                <p class="tool-desc">Marque Echo : souffle les feuilles et les débris, rapide et maniable.</p>
+            </article>
+
+            <article class="tools">
+                <img src="/img/blog/entretien-exterieur.jpg" alt="Taille-haie" class="tool-img">
+                <p class="tool-name">Taille-haie</p>
+                <p class="tool-desc">Marque Echo : taille haies et arbustes avec précision et sécurité.</p>
+            </article>
+
+            <article class="tools">
+                <img src="/img/blog/tondeuse.png" alt="Tondeuse" class="tool-img">
+                <p class="tool-name">Tondeuse</p>
+                <p class="tool-desc">Marque Weibang : tonte efficace pour pelouses petites et moyennes.</p>
+            </article>
+        </div>
     </section>
 
-    <!-- SKILLS SECTION -->
-    <section class="skills d-flex flex-wrap gap-4 mt-5">
-        SKILLS
+    <!-- SECTION ENTRETIEN D'ESPACES VERTS ET TRAVAUX -->
+    <section class="maintenance mt-5">
+        <!-- Titre principal -->
+        <h2 class="text-warning text-center mb-4">Nos prestations d’entretien et de travaux</h2>
+
+        <!-- Texte introductif -->
+        <p class="text-center lead mb-5 text-warning">
+            Chez <strong>GaSo&Co</strong>, nous intervenons pour tous vos besoins :
+            entretien d’espaces verts, travaux de bricolage et réparations diverses.
+            Taille de haies, plantations, soins arboricoles, carrelage, parquet, peinture… et bien plus encore !
+            Nous réalisons des devis personnalisés et <strong>gratuits</strong> pour tout projet,
+            qu’il soit petit ou important.
+        </p>
+
+        <!-- Liste des services -->
+        <div class="list-maintenance d-flex flex-wrap gap-4 justify-content-center fw-bold">
+            <article class="maintenance-item">
+                <img src="/img/blog/entretien-exterieur.jpg" alt="Taille de haies" class="maintenance-img">
+                <p class="maintenance-name">Taille de haies</p>
+                <p class="maintenance-desc">Élagage et taille de haies pour des jardins soignés, sécurisés et esthétiques.</p>
+            </article>
+
+            <article class="maintenance-item">
+                <img src="/img/blog/plantation.jpg" alt="Plantation" class="maintenance-img">
+                <p class="maintenance-name">Plantation</p>
+                <p class="maintenance-desc">Plantation d’arbres, fleurs et arbustes pour embellir vos espaces verts.</p>
+            </article>
+
+            <article class="maintenance-item">
+                <img src="/img/blog/arboriculture.jpg" alt="Entretien arboricole" class="maintenance-img">
+                <p class="maintenance-name">Entretien arboricole</p>
+                <p class="maintenance-desc">Soins et élagages pour préserver la santé de vos arbres et éviter les risques.</p>
+            </article>
+
+            <article class="maintenance-item">
+                <img src="/img/blog/gants-tournevis.jpg" alt="Réparations intérieures" class="maintenance-img">
+                <p class="maintenance-name">Réparations et finitions</p>
+                <p class="maintenance-desc">Carrelage, parquet, peinture et petites réparations pour vos espaces intérieurs et extérieurs.</p>
+            </article>
+
+            <article class="maintenance-item">
+                <img src="/img/blog/devis.jpg" alt="Autres services" class="maintenance-img">
+                <p class="maintenance-name">Autres services</p>
+                <p class="maintenance-desc">Nous intervenons sur tout type de projet : aménagement, bricolage, entretien ou travaux spécifiques. Devis gratuit et personnalisé.</p>
+            </article>
+        </div>
     </section>
 
-    <!-- REFERENCES SECTION -->
-    <section class="references d-flex flex-wrap gap-4 mt-5">
-        REFERENCES
-    </section>
+    <!-- FIN ENTRETIEN ESPACE VERTS - BRICOLAGE -->
 </main>
 
 <!-- FOOTER -->
