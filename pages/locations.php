@@ -19,7 +19,7 @@
             </p>
         </div>
 
-        <img src="/img/blog/location-materiel.jpg"
+        <img src="/img/location-materiel.jpg"
             alt="Location de matériel GaSo&Co"
             class="rounded img-fluid"
             style="max-width:15rem;">
@@ -33,7 +33,7 @@
 
             <!-- TONDEUSE -->
             <article class="tools tool-hover">
-                <img src="/img/blog/tondeuse.png" alt="Tondeuse" class="tool-img">
+                <img src="/img/tondeuse.png" alt="Tondeuse" class="tool-img">
                 <p class="tool-name">Tondeuse</p>
                 <p class="tool-desc">
                     Marque Weibang – entretien des pelouses petites et moyennes surfaces.
@@ -59,7 +59,7 @@
 
             <!-- DEBROUSSAILLEUSE -->
             <article class="tools tool-hover">
-                <img src="/img/blog/debroussailleuse.jpg" alt="Débroussailleuse" class="tool-img">
+                <img src="/img/debroussailleuse.jpg" alt="Débroussailleuse" class="tool-img">
                 <p class="tool-name">Débroussailleuse</p>
                 <p class="tool-desc">
                     Maruyama – terrains difficiles et herbes hautes.
@@ -85,7 +85,7 @@
 
             <!-- TAILLE-HAIE -->
             <article class="tools tool-hover">
-                <img src="/img/blog/entretien-exterieur.jpg" alt="Taille-haie" class="tool-img">
+                <img src="/img/entretien-exterieur.jpg" alt="Taille-haie" class="tool-img">
                 <p class="tool-name">Taille-haie</p>
                 <p class="tool-desc">
                     Echo – taille précise et efficace des haies.
@@ -120,7 +120,7 @@
 
             <!-- MOTOBINEUSE -->
             <article class="tools tool-hover">
-                <img src="/img/blog/fendeuse.jpg" alt="Motobineuse" class="tool-img">
+                <img src="/img/fendeuse.jpg" alt="Motobineuse" class="tool-img">
                 <p class="tool-name">Motobineuse</p>
                 <p class="tool-desc">
                     Roques et Lecoeur – préparation des sols.
@@ -146,7 +146,7 @@
 
             <!-- SOUFFLEUR -->
             <article class="tools tool-hover">
-                <img src="/img/blog/souffleur-feuilles.jpg" alt="Souffleur" class="tool-img">
+                <img src="/img/souffleur-feuilles.jpg" alt="Souffleur" class="tool-img">
                 <p class="tool-name">Souffleur</p>
                 <p class="tool-desc">
                     Echo – nettoyage rapide des feuilles et débris.
@@ -172,7 +172,7 @@
 
             <!-- AUTRES -->
             <article class="tools tool-hover">
-                <img src="/img/blog/devis.jpg" alt="Autres équipements" class="tool-img">
+                <img src="/img/devis.jpg" alt="Autres équipements" class="tool-img">
                 <p class="tool-name">Autres équipements</p>
                 <p class="tool-desc">
                     Matériel spécifique selon vos besoins.

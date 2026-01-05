@@ -14,7 +14,7 @@
 
             <h2 class="text-warning mt-3 display-1">GaSo&Co</h2>
         </div>
-        <img src="img/tailleHaie.png" alt="photo tailleur de haie" class="rounded img-fluid" style="max-width:15rem;">
+        <img src="/img/tailleHaie.png" alt="photo tailleur de haie" class="rounded img-fluid" style="max-width:15rem;">
     </section>
 
 
@@ -36,7 +36,7 @@
         <!-- Liste des outils -->
         <div class="list-tools fw-bold">
             <article class="tools">
-                <img src="/img/blog/fendeuse.jpg" alt="Fendeuse" class="tool-img">
+                <img src="/img/fendeuse.jpg" alt="Fendeuse" class="tool-img">
                 <p class="tool-name">Motobineuse fraise arrière</p>
                 <p class="tool-desc">Marque Roques et Lecoeur : idéale pour fendre le bois rapidement et efficacement.</p>
 
@@ -44,26 +44,26 @@
             </article>
 
             <article class="tools">
-                <img src="/img/blog/debroussailleuse.jpg" alt="Débroussailleuse" class="tool-img">
+                <img src="/img/debroussailleuse.jpg" alt="Débroussailleuse" class="tool-img">
                 <p class="tool-name">Débroussailleuse</p>
                 <p class="tool-desc">Maruyama : parfaite pour débroussailler les terrains difficiles et les herbes hautes.</p>
 
             </article>
 
             <article class="tools">
-                <img src="/img/blog/souffleur-feuilles.jpg" alt="Souffleur" class="tool-img">
+                <img src="/img/souffleur-feuilles.jpg" alt="Souffleur" class="tool-img">
                 <p class="tool-name">Souffleur</p>
                 <p class="tool-desc">Marque Echo : souffle les feuilles et les débris, rapide et maniable.</p>
             </article>
 
             <article class="tools">
-                <img src="/img/blog/entretien-exterieur.jpg" alt="Taille-haie" class="tool-img">
+                <img src="/img/taille-haie.jpg" alt="Taille-haie" class="tool-img">
                 <p class="tool-name">Taille-haie</p>
                 <p class="tool-desc">Marque Echo : taille haies et arbustes avec précision et sécurité.</p>
             </article>
 
             <article class="tools">
-                <img src="/img/blog/tondeuse.png" alt="Tondeuse" class="tool-img">
+                <img src="/img/tondeuse.png" alt="Tondeuse" class="tool-img">
                 <p class="tool-name">Tondeuse</p>
                 <p class="tool-desc">Marque Weibang : tonte efficace pour pelouses petites et moyennes.</p>
             </article>
@@ -88,31 +88,31 @@
         <!-- Liste des services -->
         <div class="list-maintenance d-flex flex-wrap gap-4 justify-content-center fw-bold">
             <article class="maintenance-item">
-                <img src="/img/blog/entretien-exterieur.jpg" alt="Taille de haies" class="maintenance-img">
+                <img src="/img/taille-haie.jpg" alt="Taille de haies" class="maintenance-img">
                 <p class="maintenance-name">Entretien espaces verts</p>
                 <p class="maintenance-desc">Élagage et taille de haies, tonte, labourage etc....</p>
             </article>
 
             <article class="maintenance-item">
-                <img src="/img/blog/plantation.jpg" alt="Plantation" class="maintenance-img">
+                <img src="/img/plantation.jpg" alt="Plantation" class="maintenance-img">
                 <p class="maintenance-name">Plantation</p>
                 <p class="maintenance-desc">Plantation d’arbres, fleurs et arbustes pour embellir vos espaces verts.</p>
             </article>
 
             <article class="maintenance-item">
-                <img src="/img/blog/arboriculture.jpg" alt="Entretien arboricole" class="maintenance-img">
+                <img src="/img/arboriculture.jpg" alt="Entretien arboricole" class="maintenance-img">
                 <p class="maintenance-name">Entretien arboricole</p>
                 <p class="maintenance-desc">Soins et élagages pour préserver la santé de vos arbres et éviter les risques.</p>
             </article>
 
             <article class="maintenance-item">
-                <img src="/img/blog/gants-tournevis.jpg" alt="Réparations intérieures" class="maintenance-img">
+                <img src="/img/gants-tournevis.jpg" alt="Réparations intérieures" class="maintenance-img">
                 <p class="maintenance-name">Réparations et bricolage</p>
                 <p class="maintenance-desc">Carrelage, parquet, peinture et petites réparations pour vos espaces intérieurs et extérieurs.</p>
             </article>
 
             <article class="maintenance-item">
-                <img src="/img/blog/devis.jpg" alt="Autres services" class="maintenance-img">
+                <img src="/img/devis.jpg" alt="Autres services" class="maintenance-img">
                 <p class="maintenance-name">Autres services</p>
                 <p class="maintenance-desc">Nous intervenons sur tout type de projet : aménagement, bricolage, entretien ou travaux spécifiques. Devis gratuit et personnalisé.</p>
             </article>
@@ -134,7 +134,7 @@
                 nous étudions chaque projet avec sérieux et transparence.
             </p>
 
-            <img src="/img/blog/devis.jpg"
+            <img src="/img/devis.jpg"
                 alt="Devis pour travaux"
                 class="img-fluid rounded mt-4">
 

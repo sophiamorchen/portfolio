@@ -16,7 +16,7 @@
             </p>
         </div>
 
-        <img src="/img/blog/entretien-exterieur.jpg"
+        <img src="/img/entretien-exterieur.jpg"
             alt="Services GaSo&Co"
             class="rounded img-fluid"
             style="max-width:15rem;">
@@ -28,7 +28,7 @@
 
         <div class="d-flex flex-wrap justify-content-center gap-4 fw-bold">
             <article class="maintenance-item">
-                <img src="/img/blog/entretien-exterieur.jpg" alt="Entretien jardin" class="maintenance-img">
+                <img src="/img/entretien-exterieur.jpg" alt="Entretien jardin" class="maintenance-img">
                 <p class="maintenance-name">Entretien régulier</p>
                 <p class="maintenance-desc">
                     Tonte, débroussaillage, nettoyage et entretien de vos extérieurs.
@@ -36,7 +36,7 @@
             </article>
 
             <article class="maintenance-item">
-                <img src="/img/blog/arboriculture.jpg" alt="Élagage" class="maintenance-img">
+                <img src="/img/arboriculture.jpg" alt="Élagage" class="maintenance-img">
                 <p class="maintenance-name">Élagage & taille</p>
                 <p class="maintenance-desc">
                     Taille de haies, élagage d’arbres et sécurisation des zones à risque.
@@ -44,7 +44,7 @@
             </article>
 
             <article class="maintenance-item">
-                <img src="/img/blog/plantation.jpg" alt="Plantation" class="maintenance-img">
+                <img src="/img/plantation.jpg" alt="Plantation" class="maintenance-img">
                 <p class="maintenance-name">Plantations</p>
                 <p class="maintenance-desc">
                     Plantation d’arbres, arbustes et massifs pour valoriser vos espaces verts.
@@ -59,7 +59,7 @@
 
         <div class="d-flex flex-wrap justify-content-center gap-4 fw-bold">
             <article class="maintenance-item">
-                <img src="/img/blog/gants-tournevis.jpg" alt="Bricolage" class="maintenance-img">
+                <img src="/img/gants-tournevis.jpg" alt="Bricolage" class="maintenance-img">
                 <p class="maintenance-name">Petits travaux</p>
                 <p class="maintenance-desc">
                     Montage, réparations, ajustements et interventions ponctuelles.
@@ -67,7 +67,7 @@
             </article>
 
             <article class="maintenance-item">
-                <img src="/img/blog/devis.jpg" alt="Rénovation" class="maintenance-img">
+                <img src="/img/devis.jpg" alt="Rénovation" class="maintenance-img">
                 <p class="maintenance-name">Rénovation légère</p>
                 <p class="maintenance-desc">
                     Peinture, parquet, carrelage et améliorations intérieures.

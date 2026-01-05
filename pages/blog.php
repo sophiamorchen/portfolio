@@ -21,7 +21,7 @@
         <!-- ARTICLE -->
         <article class="blog-card d-flex flex-column flex-md-row">
             <div class="blog-card-img">
-                <img src="../img/blog/entretien-exterieur.jpg"
+                <img src="../img/entretien-exterieur.jpg"
                     alt="Entretien extérieur et jardin"
                     class="img-fluid">
             </div>
@@ -54,7 +54,7 @@
         <!-- ARTICLE -->
         <article class="blog-card d-flex flex-column flex-md-row">
             <div class="blog-card-img">
-                <img src="../img/blog/location-materiel.jpg"
+                <img src="../img/location-materiel.jpg"
                     alt="Location de matériel"
                     class="img-fluid">
             </div>
@@ -85,7 +85,7 @@
         <!-- ARTICLE -->
         <article class="blog-card d-flex flex-column flex-md-row">
             <div class="blog-card-img">
-                <img src="../img/blog/bricolage-outils.jpg"
+                <img src="../img/bricolage-outils.jpg"
                     alt="Outils de bricolage"
                     class="img-fluid">
             </div>
