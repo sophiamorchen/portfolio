@@ -1,4 +1,13 @@
-<?php require_once "../includes/header.php"; ?>
+<?php
+require_once(__DIR__ . '/../includes/header.php'); // header.php inclus config.php
+
+require_once(__DIR__ . '/../lib/pdo.php');
+require_once(__DIR__ . '/../lib/locations.php');
+
+
+$locations = getLocations($pdo, 0);
+
+?>
 
 <main class="container my-5">
 

@@ -1,4 +1,12 @@
-<?php require_once "includes/header.php" ?>
+<?php
+// index.php est à la racine /portfolio
+require_once(__DIR__ . '/includes/header.php'); // header.php inclut config.php
+
+// Si tu as besoin de PDO ou de fonctions services/images, inclure comme ceci :
+require_once(__DIR__ . '/lib/pdo.php');
+require_once(__DIR__ . '/lib/services.php');
+require_once(__DIR__ . '/lib/images.php');
+?>
 
 
 <main class="container my-5">
@@ -12,7 +20,7 @@
                 Espaces verts, bricolage, chantiers : GaSo&Co vous accompagne avec du matériel performant et des solutions adaptées à tous vos besoins.
             </p>
 
-            <h2 class="text-warning mt-3 display-1">GaSo&Co</h2>
+            <h2 class="text-warning mt-3 display-1"><?= HOUSE_LOGO ?></h2>
         </div>
         <img src="/img/tailleHaie.png" alt="photo tailleur de haie" class="rounded img-fluid" style="max-width:15rem;">
     </section>
@@ -38,7 +46,7 @@
             <article class="tools">
                 <img src="/img/fendeuse.jpg" alt="Fendeuse" class="tool-img">
                 <p class="tool-name">Motobineuse fraise arrière</p>
-                <p class="tool-desc">Marque Roques et Lecoeur : idéale pour fendre le bois rapidement et efficacement.</p>
+                <p class="tool-desc">Conçue pour les travaux difficiles et les longues distances en terrain souple et non caillouteux. Elle permet d'obtenir une préparation très fine de votre terrain avant de semer.</p>
 
 
             </article>

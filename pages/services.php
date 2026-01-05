@@ -1,5 +1,17 @@
-<?php require_once "../includes/header.php"; ?>
+<?php
+require_once(__DIR__ . '/../includes/header.php'); // header.php inclus config.php
+require_once(__DIR__ . '/../lib/pdo.php');
+require_once(__DIR__ . '/../lib/services.php');
+require_once(__DIR__ . '/../lib/images.php');
 
+
+
+
+$allServices = getServices($pdo);
+$jardinServices = getServices($pdo, 'jardin');
+$bricolageServices = getServices($pdo, 'bricolage');
+$images = getImages($pdo);
+?>
 <main class="container my-5">
 
     <!-- HERO SERVICES -->
@@ -16,8 +28,8 @@
             </p>
         </div>
 
-        <img src="/img/entretien-exterieur.jpg"
-            alt="Services GaSo&Co"
+        <img src="<?= $images[2]['path'] ?>"
+            alt="<?= $images[2]['alt_text'] ?>"
             class="rounded img-fluid"
             style="max-width:15rem;">
     </section>
@@ -25,32 +37,12 @@
     <!-- SERVICES ESPACES VERTS -->
     <section class="services-page-service-section mt-5 rounded p-4">
         <h2 class="text-warning text-center mb-4">Entretien d’espaces verts</h2>
-
         <div class="d-flex flex-wrap justify-content-center gap-4 fw-bold">
-            <article class="maintenance-item">
-                <img src="/img/entretien-exterieur.jpg" alt="Entretien jardin" class="maintenance-img">
-                <p class="maintenance-name">Entretien régulier</p>
-                <p class="maintenance-desc">
-                    Tonte, débroussaillage, nettoyage et entretien de vos extérieurs.
-                </p>
-            </article>
-
-            <article class="maintenance-item">
-                <img src="/img/arboriculture.jpg" alt="Élagage" class="maintenance-img">
-                <p class="maintenance-name">Élagage & taille</p>
-                <p class="maintenance-desc">
-                    Taille de haies, élagage d’arbres et sécurisation des zones à risque.
-                </p>
-            </article>
-
-            <article class="maintenance-item">
-                <img src="/img/plantation.jpg" alt="Plantation" class="maintenance-img">
-                <p class="maintenance-name">Plantations</p>
-                <p class="maintenance-desc">
-                    Plantation d’arbres, arbustes et massifs pour valoriser vos espaces verts.
-                </p>
-            </article>
+            <?php foreach ($jardinServices as $jardinService) {
+                include '../includes/services_partial.php';
+            } ?>
         </div>
+
     </section>
 
     <!-- SERVICES BRICOLAGE -->
@@ -58,21 +50,9 @@
         <h2 class="text-warning text-center mb-4">Bricolage & petits travaux</h2>
 
         <div class="d-flex flex-wrap justify-content-center gap-4 fw-bold">
-            <article class="maintenance-item">
-                <img src="/img/gants-tournevis.jpg" alt="Bricolage" class="maintenance-img">
-                <p class="maintenance-name">Petits travaux</p>
-                <p class="maintenance-desc">
-                    Montage, réparations, ajustements et interventions ponctuelles.
-                </p>
-            </article>
-
-            <article class="maintenance-item">
-                <img src="/img/devis.jpg" alt="Rénovation" class="maintenance-img">
-                <p class="maintenance-name">Rénovation légère</p>
-                <p class="maintenance-desc">
-                    Peinture, parquet, carrelage et améliorations intérieures.
-                </p>
-            </article>
+            <?php foreach ($bricolageServices as $bricolageService) { 
+                include '../includes/bricolage_partial.php';
+            } ?>
         </div>
     </section>
 

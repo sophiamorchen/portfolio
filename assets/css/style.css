@@ -11,7 +11,7 @@ body {
     z-index: 1;
 
     /* Fond discret */
-    background-image: url('/img/blog/background-snipper.jpg');
+    background-image: url('../../img/background-snipper.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -113,8 +113,14 @@ main::before {
     padding: 0.3rem 0;
     transition: color 0.3s;
 }
+.site-nav .nav-link.active {
+    color: #75af08;
 
-/* underline animé */
+    font-weight: 700;
+    /* un petit bonus pour qu’on voie bien */
+}
+
+
 .site-nav .nav-link::after {
     content: "";
     position: absolute;
@@ -124,7 +130,7 @@ main::before {
     height: 2px;
     background-color: #75af08;
     transition: width 0.3s ease;
-}
+} 
 
 .site-nav .nav-link:hover {
     color: #75af08;

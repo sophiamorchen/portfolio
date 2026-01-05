@@ -1,4 +1,4 @@
-<?php require_once "../includes/header.php"; ?>
+<?php require_once(__DIR__ . '/../includes/header.php'); ?>
 
 <main class="container my-5">
     <section class="legal-section p-4 bg-white rounded shadow-sm">

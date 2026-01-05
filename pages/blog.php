@@ -1,4 +1,5 @@
-<?php require_once "../includes/header.php"; ?>
+<?php require_once(__DIR__ . '/../includes/header.php'); // header.php inclus config.php; 
+?>
 
 <main class="container my-5 blog-page">
 
