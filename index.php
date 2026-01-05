@@ -18,35 +18,10 @@
     </section>
 
 
-    <!-- SECTION DEVIS -->
-
-    <section class="hero-devis-section text-center mt-5">
-        <div class="hero-devis-box mx-auto">
-
-            <h3 class="text-warning">Devis gratuit & personnalisé</h3>
-
-            <p class="mt-3">
-                Du simple entretien de jardin au chantier complet,
-                nous étudions chaque projet avec sérieux et transparence.
-            </p>
-
-            <img src="/img/blog/devis.jpg"
-                alt="Devis pour travaux"
-                class="img-fluid rounded mt-4">
-
-            <a href="/pages/contact.php"
-                class="btn btn-warning btn-lg mt-4">
-                Demander mon devis
-            </a>
-
-        </div>
-    </section>
-
-
 
 
     <!-- SECTION LOCATION DE MATÉRIEL -->
-    <section class="location d-flex flex-column flex-wrap gap-4 mt-5">
+    <section class="location d-flex flex-column flex-wrap gap-4 mt-5 align-items-center">
         <!-- Titre principal -->
         <h2 class="text-warning text-center mb-4">Location de matériel</h2>
 
@@ -64,12 +39,15 @@
                 <img src="/img/blog/fendeuse.jpg" alt="Fendeuse" class="tool-img">
                 <p class="tool-name">Motobineuse fraise arrière</p>
                 <p class="tool-desc">Marque Roques et Lecoeur : idéale pour fendre le bois rapidement et efficacement.</p>
+
+
             </article>
 
             <article class="tools">
                 <img src="/img/blog/debroussailleuse.jpg" alt="Débroussailleuse" class="tool-img">
                 <p class="tool-name">Débroussailleuse</p>
                 <p class="tool-desc">Maruyama : parfaite pour débroussailler les terrains difficiles et les herbes hautes.</p>
+
             </article>
 
             <article class="tools">
@@ -90,10 +68,11 @@
                 <p class="tool-desc">Marque Weibang : tonte efficace pour pelouses petites et moyennes.</p>
             </article>
         </div>
+        <a href="/pages/location-materiel.php" class="btn btn-warning">Voir nos locations</a>
     </section>
 
     <!-- SECTION ENTRETIEN D'ESPACES VERTS ET TRAVAUX -->
-    <section class="maintenance mt-5">
+    <section class="maintenance mt-5 gap-4 d-flex flex-column align-items-center">
         <!-- Titre principal -->
         <h2 class="text-warning text-center mb-4">Nos prestations d’entretien et de travaux</h2>
 
@@ -138,9 +117,34 @@
                 <p class="maintenance-desc">Nous intervenons sur tout type de projet : aménagement, bricolage, entretien ou travaux spécifiques. Devis gratuit et personnalisé.</p>
             </article>
         </div>
+        <a href="/pages/location-materiel.php" class="btn btn-warning">Voir nos prestations</a>
     </section>
 
     <!-- FIN ENTRETIEN ESPACE VERTS - BRICOLAGE -->
+
+    <!-- SECTION DEVIS -->
+
+    <section class="hero-devis-section text-center mt-5">
+        <div class="hero-devis-box mx-auto">
+
+            <h3 class="text-warning">Devis gratuit & personnalisé</h3>
+
+            <p class="mt-3">
+                Du simple entretien de jardin au chantier complet,
+                nous étudions chaque projet avec sérieux et transparence.
+            </p>
+
+            <img src="/img/blog/devis.jpg"
+                alt="Devis pour travaux"
+                class="img-fluid rounded mt-4">
+
+            <a href="/pages/contact.php"
+                class="btn btn-warning btn-lg mt-4 mx-3">
+                Demander mon devis
+            </a>
+
+        </div>
+    </section>
 </main>
 
 <!-- FOOTER -->

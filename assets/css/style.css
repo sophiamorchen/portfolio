@@ -247,70 +247,6 @@ main::before {
 
 /* --------------------------- FIN HERO --------------------------- */
 
-/* --------------------------- HERO DEVIS --------------------------- */
-/* SECTION DEVIS – même fond que le hero */
-.hero-devis-section {
-    position: relative;
-    background: linear-gradient(135deg,
-            rgba(63, 68, 63, 0.78) 0%,
-            rgba(88, 94, 89, 0.78) 45%,
-            rgba(58, 63, 59, 0.78) 100%);
-    border-radius: 14px;
-    box-shadow:
-        0 10px 25px rgba(0, 0, 0, 0.15),
-        inset 0 1px 0 rgba(255, 255, 255, 0.05);
-    padding: 4rem 1rem;
-    overflow: hidden;
-}
-
-/* Effet lumineux subtil (comme le hero) */
-.hero-devis-section::before {
-    content: "";
-    position: absolute;
-    top: -30%;
-    left: -20%;
-    width: 150%;
-    height: 150%;
-    background: radial-gradient(circle at top left,
-            rgba(255, 193, 7, 0.06),
-            transparent 60%);
-    pointer-events: none;
-}
-
-/* Contenu au-dessus */
-.hero-devis-box {
-    position: relative;
-    z-index: 1;
-    max-width: 40rem;
-    margin: auto;
-}
-.hero-devis-section {
-    padding: 4rem 1rem;
-}
-
-.hero-devis-box {
-    max-width: 40rem;
-    margin: auto;
-}
-
-.hero-devis-box p {
-    color: rgba(255, 255, 255, 0.85);
-    font-size: 1.05rem;
-    line-height: 1.7;
-}
-
-.hero-devis-box img {
-    max-width: 18rem;
-    opacity: 0.95;
-}
-
-.hero-devis-box .btn {
-    padding: 0.75rem 2.5rem;
-    font-weight: 600;
-}
-
-/* --------------------------- FIN HERO DEVIS --------------------------- */
-
 
 /* --------------------------- SECTION OUTILS EN LOCATION --------------------------- */
 .list-tools {
@@ -452,8 +388,242 @@ main::before {
 }
 
 /* --------------------------- FIN MAINTENANCE CARDS --------------------------- */
+/* --------------------------- DEVIS --------------------------- */
+/* SECTION DEVIS – même fond que le hero */
+.hero-devis-section {
+    position: relative;
+    background: linear-gradient(135deg,
+            rgba(63, 68, 63, 0.78) 0%,
+            rgba(88, 94, 89, 0.78) 45%,
+            rgba(58, 63, 59, 0.78) 100%);
+    border-radius: 14px;
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    padding: 4rem 1rem;
+    overflow: hidden;
+}
+
+/* Effet lumineux subtil (comme le hero) */
+.hero-devis-section::before {
+    content: "";
+    position: absolute;
+    top: -30%;
+    left: -20%;
+    width: 150%;
+    height: 150%;
+    background: radial-gradient(circle at top left,
+            rgba(255, 193, 7, 0.06),
+            transparent 60%);
+    pointer-events: none;
+}
+
+/* Contenu au-dessus */
+.hero-devis-box {
+    position: relative;
+    z-index: 1;
+    max-width: 40rem;
+    margin: auto;
+}
+
+.hero-devis-section {
+    padding: 4rem 1rem;
+}
+
+.hero-devis-box {
+    max-width: 40rem;
+    margin: auto;
+}
+
+.hero-devis-box p {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+.hero-devis-box img {
+    max-width: 18rem;
+    opacity: 0.95;
+}
+
+.hero-devis-box .btn {
+    padding: 0.75rem 2.5rem;
+    font-weight: 600;
+}
+
+/* --------------------------- FIN DEVIS  --------------------------- */
+
+/* --------------------------- PAGE SERVICES  --------------------------- */
+.services-page-service-section, .services-page-bricolage-section {
+background: linear-gradient(135deg, rgba(63, 68, 63, 0.7) 0%,
+/* légèrement plus transparent */
+rgba(88, 94, 89, 0.7) 45%, rgba(58, 63, 59, 0.7) 100%);
+}
+
+/* --------------------------- FIN PAGE SERVICES --------------------------- */
+/* --------------------------- PAGE LOCATIONS --------------------------- */
+
+/* ---------- SECTIONS JARDIN / CHANTIER ---------- */
+.location-page-jardin-section,
+.location-page-chantier-section {
+    background: linear-gradient(135deg,
+            rgba(63, 68, 63, 0.6),
+            rgba(58, 63, 59, 0.6));
+    border-radius: 14px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    padding: 2rem;
+}
+
+/* ---------- LISTE DES OUTILS ---------- */
+.list-tools {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.2rem;
+    justify-content: center;
+}
+
+/* ---------- CARTES OUTILS ---------- */
+.tools {
+    position: relative;
+    /* nécessaire pour le tableau BAS */
+    flex: 1 1 240px;
+    max-width: 300px;
+
+    background: linear-gradient(180deg,
+            #9bb61a 0%,
+            #8aa40f 100%);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+    padding-bottom: 6rem;
+}
+
+.tools:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.25);
+    filter: brightness(1.05);
+}
+
+/* ---------- IMAGE ---------- */
+.tools .tool-img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    /* largeur / hauteur */
+    object-fit: cover;
+    display: block;
+}
+
+/* ---------- TEXTE ---------- */
+.tools .tool-name {
+    font-weight: 800;
+    text-align: center;
+    margin: 0.6rem 0 0.2rem;
+    color: #1f1f1f;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.tools .tool-desc {
+    font-size: 0.9rem;
+    text-align: center;
+    padding: 0 0.75rem 0.5rem;
+    color: #2a2a2a;
+}
+
+/* ===================================================== */
+/* ================== TARIFS (BAS) ==================== */
+/* ===================================================== */
+.tools .table {
+    position: absolute;
+    /* sort du flux */
+    bottom: 0;
+    /* colle en bas de la carte */
+    left: 50%;
+    /* centre horizontal */
+    transform: translateX(-50%);
+    width: 90%;
+    /* largeur du tableau */
+    margin: 0;
+    /* supprime marges bootstrap */
+    border-collapse: separate;
+    border-spacing: 0;
+    background: transparent;
+}
+
+/* En-tête tableau */
+.tools .table thead th {
+    background: #2b2b2b;
+    color: #ffc107;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    border: none;
+    padding: 0.4rem 0.2rem;
+    border-radius: 6px 6px 0 0;
+}
+
+/* cellules */
+.tools .table tbody td {
+    background: linear-gradient(180deg,
+            #3a3a3a,
+            #2f2f2f);
+    color: #fff;
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-align: center;
+    border: none;
+    padding: 0.45rem 0.2rem;
+    transition: background 0.3s ease, transform 0.3s ease;
+    border-radius: 0;
+}
+
+/* coins arrondis bas */
+.tools .table tbody tr:last-child td:first-child {
+    border-bottom-left-radius: 6px;
+}
+
+.tools .table tbody tr:last-child td:last-child {
+    border-bottom-right-radius: 6px;
+}
+
+/* SURVOL CARTES + TABLEAU */
+.tools:hover .table tbody td {
+    background: linear-gradient(180deg,
+            #444444,
+            #383838);
+    transform: scale(1.02);
+}
+
+/* TEXTE SUR DEVIS */
+.tools p.text-warning {
+    text-align: center;
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+    margin-top: 1rem;
+}
 
 
+@media (max-width: 768px) {
+    .tools {
+        flex: 1 1 45%;
+        padding-bottom: 5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .tools {
+        flex: 1 1 90%;
+        padding-bottom: 5rem;
+    }
+
+    .tools .table thead th,
+    .tools .table tbody td {
+        font-size: 0.8rem;
+    }
+}
+
+/* --------------------------- FIN PAGE LOCATIONS --------------------------- */
 
 /* --------------------------- BLOG --------------------------- */
 

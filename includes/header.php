@@ -25,8 +25,8 @@
 
             <nav class="site-nav">
                 <a href="/" class="nav-link">Accueil</a>
-                <a href="#" class="nav-link">Services</a>
-                <a href="#" class="nav-link">Location de matériel</a>
+                <a href="/pages/services.php" class="nav-link">Services</a>
+                <a href="/pages/locations.php" class="nav-link">Location de matériel</a>
                 <a href="/pages/devis.php" class="nav-link">Devis gratuit</a>
                 <a href="/pages/blog.php" class="nav-link">Blog</a>
                 <a href="/pages/contact.php" class="nav-link">Contact</a>
