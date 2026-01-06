@@ -39,7 +39,7 @@ $images = getImages($pdo);
         <h2 class="text-warning text-center mb-4">Entretien d’espaces verts</h2>
         <div class="d-flex flex-wrap justify-content-center gap-4 fw-bold">
             <?php foreach ($jardinServices as $jardinService) {
-                include '../includes/services_partial.php';
+                include '../includes/page_services_garden_partial.php';
             } ?>
         </div>
 
@@ -51,7 +51,7 @@ $images = getImages($pdo);
 
         <div class="d-flex flex-wrap justify-content-center gap-4 fw-bold">
             <?php foreach ($bricolageServices as $bricolageService) { 
-                include '../includes/bricolage_partial.php';
+                include '../includes/page_service_bricolage_partial.php';
             } ?>
         </div>
     </section>

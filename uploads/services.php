@@ -17,7 +17,7 @@ $services = getServices($pdo, 'jardin');
                 <div class="card-body">
                     <h5 class="card-title"><?= $service['name']; ?></h5>
                     <p class="card-text"><?= $service['description']; ?></p>
-                    <img src="<?= $service['images_path'] ?>" alt="">
+                    <img src="<?= $service['img_path'] ?>" alt="">
                 </div>
             </div>
         </div>

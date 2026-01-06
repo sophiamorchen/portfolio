@@ -5,7 +5,7 @@ DEFINE('HOUSE_LOGO', 'GaSo&Co');
 define('ROOT_PATH', __DIR__ . '/'); // chemin absolu vers /portfolio
 
 
-define('BASE_URL', '/'); // à adapter selon ton WAMP
+define('BASE_URL', '/'); // à adapter selon $_SERVER
 
 $mainMenu = [
     'index.php' => 'Accueil',

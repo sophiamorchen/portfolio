@@ -1,12 +1,11 @@
 <?php
-require_once(__DIR__ . '/../includes/header.php'); // header.php inclus config.php
-
+require_once(__DIR__ . '/../includes/header.php');
 require_once(__DIR__ . '/../lib/pdo.php');
 require_once(__DIR__ . '/../lib/locations.php');
 
-
-$locations = getLocations($pdo, 0);
-
+// Récupérer les locations par catégorie (à mettre AVANT le HTML)
+$locationsJardin = getLocationsByCategory($pdo, 'jardin');
+$locationsBricolage = getLocationsByCategory($pdo, 'bricolage');
 ?>
 
 <main class="container my-5">
@@ -14,20 +13,15 @@ $locations = getLocations($pdo, 0);
     <!-- HERO LOCATION -->
     <section class="hero-section d-flex flex-column flex-md-row align-items-center gap-4 p-4 shadow-sm">
         <div class="flex-fill text-center">
-
             <h2 class="text-warning mb-4">Nos locations</h2>
             <p class="lead text-warning fw-bold">
                 Jardin, bricolage ou chantier : GaSo&Co met à votre disposition
-                du matériel professionnel, entretenu et prêt à l’emploi.
-                La location vous permet de travailler efficacement,
-                sans contrainte ni investissement inutile.
+                du matériel professionnel, entretenu et prêt à l'emploi.
             </p>
-
             <p class="text-warning mt-3">
                 Tarifs indicatifs – dégressifs selon la durée de location.
             </p>
         </div>
-
         <img src="/img/location-materiel.jpg"
             alt="Location de matériel GaSo&Co"
             class="rounded img-fluid"
@@ -39,85 +33,32 @@ $locations = getLocations($pdo, 0);
         <h2 class="text-warning text-center mb-4">Matériel pour le jardin</h2>
 
         <div class="d-flex flex-wrap justify-content-center gap-4 fw-bold">
+            <?php foreach ($locationsJardin as $location): ?>
+                <article class="tools tool-hover">
+                    <img src="<?= $location['img_path'] ?>"
+                        alt="<?= $location['img_alt'] ?>"
+                        class="tool-img">
+                    <p class="tool-name"><?= $location['name'] ?></p>
+                    <p class="tool-desc"><?= $location['description'] ?></p>
 
-            <!-- TONDEUSE -->
-            <article class="tools tool-hover">
-                <img src="/img/tondeuse.png" alt="Tondeuse" class="tool-img">
-                <p class="tool-name">Tondeuse</p>
-                <p class="tool-desc">
-                    Marque Weibang – entretien des pelouses petites et moyennes surfaces.
-                </p>
-
-                <table class="table table-sm text-center mt-3">
-                    <thead>
-                        <tr>
-                            <th>Journée</th>
-                            <th>Week-end</th>
-                            <th>Semaine</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>35 €</td>
-                            <td>60 €</td>
-                            <td>140 €</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </article>
-
-            <!-- DEBROUSSAILLEUSE -->
-            <article class="tools tool-hover">
-                <img src="/img/debroussailleuse.jpg" alt="Débroussailleuse" class="tool-img">
-                <p class="tool-name">Débroussailleuse</p>
-                <p class="tool-desc">
-                    Maruyama – terrains difficiles et herbes hautes.
-                </p>
-
-                <table class="table table-sm text-center mt-3">
-                    <thead>
-                        <tr>
-                            <th>Journée</th>
-                            <th>Week-end</th>
-                            <th>Semaine</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>30 €</td>
-                            <td>55 €</td>
-                            <td>130 €</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </article>
-
-            <!-- TAILLE-HAIE -->
-            <article class="tools tool-hover">
-                <img src="/img/entretien-exterieur.jpg" alt="Taille-haie" class="tool-img">
-                <p class="tool-name">Taille-haie</p>
-                <p class="tool-desc">
-                    Echo – taille précise et efficace des haies.
-                </p>
-
-                <table class="table table-sm text-center mt-3">
-                    <thead>
-                        <tr>
-                            <th>Journée</th>
-                            <th>Week-end</th>
-                            <th>Semaine</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>25 €</td>
-                            <td>45 €</td>
-                            <td>110 €</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </article>
-
+                    <table class="table table-sm text-center mt-3">
+                        <thead>
+                            <tr>
+                                <th>Journée</th>
+                                <th>Journée Week-end</th>
+                                <th>Semaine</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><?= $location['prices']['day'] ?> €</td>
+                                <td><?= $location['prices']['week-end-day'] ?> €</td>
+                                <td><?= $location['prices']['week'] ?> €</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </article>
+            <?php endforeach; ?>
         </div>
     </section>
 
@@ -126,79 +67,43 @@ $locations = getLocations($pdo, 0);
         <h2 class="text-warning text-center mb-4">Matériel de chantier</h2>
 
         <div class="d-flex flex-wrap justify-content-center gap-4 fw-bold">
+            <?php if (empty($locationsBricolage)): ?>
+                <p class="text-warning">Aucun matériel de chantier disponible pour le moment.</p>
+            <?php else: ?>
+                <?php foreach ($locationsBricolage as $location): ?>
+                    <article class="tools tool-hover">
+                        <img src="<?= $location['img_path'] ?>"
+                            alt="<?= $location['img_alt'] ?>"
+                            class="tool-img">
+                        <p class="tool-name"><?= $location['name'] ?></p>
+                        <p class="tool-desc"><?= $location['description'] ?></p>
 
-            <!-- MOTOBINEUSE -->
-            <article class="tools tool-hover">
-                <img src="/img/fendeuse.jpg" alt="Motobineuse" class="tool-img">
-                <p class="tool-name">Motobineuse</p>
-                <p class="tool-desc">
-                    Roques et Lecoeur – préparation des sols.
-                </p>
-
-                <table class="table table-sm text-center mt-3">
-                    <thead>
-                        <tr>
-                            <th>Journée</th>
-                            <th>Week-end</th>
-                            <th>Semaine</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>45 €</td>
-                            <td>80 €</td>
-                            <td>190 €</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </article>
-
-            <!-- SOUFFLEUR -->
-            <article class="tools tool-hover">
-                <img src="/img/souffleur-feuilles.jpg" alt="Souffleur" class="tool-img">
-                <p class="tool-name">Souffleur</p>
-                <p class="tool-desc">
-                    Echo – nettoyage rapide des feuilles et débris.
-                </p>
-
-                <table class="table table-sm text-center mt-3">
-                    <thead>
-                        <tr>
-                            <th>Journée</th>
-                            <th>Week-end</th>
-                            <th>Semaine</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>20 €</td>
-                            <td>35 €</td>
-                            <td>90 €</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </article>
-
-            <!-- AUTRES -->
-            <article class="tools tool-hover">
-                <img src="/img/devis.jpg" alt="Autres équipements" class="tool-img">
-                <p class="tool-name">Autres équipements</p>
-                <p class="tool-desc">
-                    Matériel spécifique selon vos besoins.
-                </p>
-
-                <p class="text-warning fw-bold mt-4">
-                    Sur devis
-                </p>
-            </article>
-
+                        <table class="table table-sm text-center mt-3">
+                            <thead>
+                                <tr>
+                                    <th>Journée</th>
+                                    <th>Journée Week-end</th>
+                                    <th>Semaine</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><?= $location['prices']['day'] ?> €</td>
+                                    <td><?= $location['prices']['week-end-day'] ?> €</td>
+                                    <td><?= $location['prices']['week'] ?> €</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </article>
+                <?php endforeach; ?>
+            <?php endif; ?>
         </div>
     </section>
 
     <!-- CTA -->
     <section class="hero-devis-section text-center mt-5">
         <div class="hero-devis-box mx-auto">
-            <h3 class="text-warning">Besoin d’un matériel précis ?</h3>
+            <h3 class="text-warning">Besoin d'un matériel précis ?</h3>
             <p class="mt-3">
                 Contactez-nous pour connaître les disponibilités
                 et obtenir un devis personnalisé.

@@ -1,11 +1,17 @@
 <?php
-// index.php est à la racine /portfolio
-require_once(__DIR__ . '/includes/header.php'); // header.php inclut config.php
+// header.php inclut config.php
+require_once(__DIR__ . '/includes/header.php');
 
-// Si tu as besoin de PDO ou de fonctions services/images, inclure comme ceci :
 require_once(__DIR__ . '/lib/pdo.php');
 require_once(__DIR__ . '/lib/services.php');
+require_once(__DIR__ . '/lib/locations.php');
 require_once(__DIR__ . '/lib/images.php');
+
+$tools = getLocations($pdo, 4);
+$services = getServices($pdo);
+$images = getImages($pdo);
+
+
 ?>
 
 
@@ -22,7 +28,7 @@ require_once(__DIR__ . '/lib/images.php');
 
             <h2 class="text-warning mt-3 display-1"><?= HOUSE_LOGO ?></h2>
         </div>
-        <img src="/img/tailleHaie.png" alt="photo tailleur de haie" class="rounded img-fluid" style="max-width:15rem;">
+        <img src="<?=$images[2]['path']?>" alt="<?=$images[2]['alt_text']?>" class="rounded img-fluid" style="max-width:15rem;">
     </section>
 
 
@@ -43,40 +49,15 @@ require_once(__DIR__ . '/lib/images.php');
 
         <!-- Liste des outils -->
         <div class="list-tools fw-bold">
-            <article class="tools">
-                <img src="/img/fendeuse.jpg" alt="Fendeuse" class="tool-img">
-                <p class="tool-name">Motobineuse fraise arrière</p>
-                <p class="tool-desc">Conçue pour les travaux difficiles et les longues distances en terrain souple et non caillouteux. Elle permet d'obtenir une préparation très fine de votre terrain avant de semer.</p>
-
-
-            </article>
-
-            <article class="tools">
-                <img src="/img/debroussailleuse.jpg" alt="Débroussailleuse" class="tool-img">
-                <p class="tool-name">Débroussailleuse</p>
-                <p class="tool-desc">Maruyama : parfaite pour débroussailler les terrains difficiles et les herbes hautes.</p>
-
-            </article>
-
-            <article class="tools">
-                <img src="/img/souffleur-feuilles.jpg" alt="Souffleur" class="tool-img">
-                <p class="tool-name">Souffleur</p>
-                <p class="tool-desc">Marque Echo : souffle les feuilles et les débris, rapide et maniable.</p>
-            </article>
-
-            <article class="tools">
-                <img src="/img/taille-haie.jpg" alt="Taille-haie" class="tool-img">
-                <p class="tool-name">Taille-haie</p>
-                <p class="tool-desc">Marque Echo : taille haies et arbustes avec précision et sécurité.</p>
-            </article>
-
-            <article class="tools">
-                <img src="/img/tondeuse.png" alt="Tondeuse" class="tool-img">
-                <p class="tool-name">Tondeuse</p>
-                <p class="tool-desc">Marque Weibang : tonte efficace pour pelouses petites et moyennes.</p>
-            </article>
+            <?php foreach ($tools as $tool) { ?>
+                <article class="tools">
+                    <img src="<?= $tool['img_path'] ?>" alt="<?= $tool['img_alt'] ?>" class="tool-img">
+                    <p class="tool-name"><?= $tool['name'] ?></p>
+                    <p class="tool-desc"><?= $tool['description'] ?></p>
+                </article>
+            <?php } ?>
         </div>
-        <a href="/pages/location-materiel.php" class="btn btn-warning">Voir nos locations</a>
+        <a href="http://portfolio.local/pages/locations.php" class="btn btn-warning">Voir nos locations</a>
     </section>
 
     <!-- SECTION ENTRETIEN D'ESPACES VERTS ET TRAVAUX -->
@@ -95,37 +76,15 @@ require_once(__DIR__ . '/lib/images.php');
 
         <!-- Liste des services -->
         <div class="list-maintenance d-flex flex-wrap gap-4 justify-content-center fw-bold">
-            <article class="maintenance-item">
-                <img src="/img/taille-haie.jpg" alt="Taille de haies" class="maintenance-img">
-                <p class="maintenance-name">Entretien espaces verts</p>
-                <p class="maintenance-desc">Élagage et taille de haies, tonte, labourage etc....</p>
-            </article>
-
-            <article class="maintenance-item">
-                <img src="/img/plantation.jpg" alt="Plantation" class="maintenance-img">
-                <p class="maintenance-name">Plantation</p>
-                <p class="maintenance-desc">Plantation d’arbres, fleurs et arbustes pour embellir vos espaces verts.</p>
-            </article>
-
-            <article class="maintenance-item">
-                <img src="/img/arboriculture.jpg" alt="Entretien arboricole" class="maintenance-img">
-                <p class="maintenance-name">Entretien arboricole</p>
-                <p class="maintenance-desc">Soins et élagages pour préserver la santé de vos arbres et éviter les risques.</p>
-            </article>
-
-            <article class="maintenance-item">
-                <img src="/img/gants-tournevis.jpg" alt="Réparations intérieures" class="maintenance-img">
-                <p class="maintenance-name">Réparations et bricolage</p>
-                <p class="maintenance-desc">Carrelage, parquet, peinture et petites réparations pour vos espaces intérieurs et extérieurs.</p>
-            </article>
-
-            <article class="maintenance-item">
-                <img src="/img/devis.jpg" alt="Autres services" class="maintenance-img">
-                <p class="maintenance-name">Autres services</p>
-                <p class="maintenance-desc">Nous intervenons sur tout type de projet : aménagement, bricolage, entretien ou travaux spécifiques. Devis gratuit et personnalisé.</p>
-            </article>
+            <?php foreach ($services as $service) { ?>
+                <article class="maintenance-item">
+                    <img src="<?= $service['img_path'] ?>" alt="<?= $service['img_alt'] ?>" class="maintenance-img">
+                    <p class="maintenance-name"><?= $service['name'] ?></p>
+                    <p class="maintenance-desc"><?= $service['description'] ?></p>
+                </article>
+            <?php } ?>
         </div>
-        <a href="/pages/location-materiel.php" class="btn btn-warning">Voir nos prestations</a>
+        <a href="http://portfolio.local/pages/services.php" class="btn btn-warning">Voir nos prestations</a>
     </section>
 
     <!-- FIN ENTRETIEN ESPACE VERTS - BRICOLAGE -->
@@ -142,11 +101,11 @@ require_once(__DIR__ . '/lib/images.php');
                 nous étudions chaque projet avec sérieux et transparence.
             </p>
 
-            <img src="/img/devis.jpg"
-                alt="Devis pour travaux"
+            <img src="<?= $images[11]['path'] ?>"
+                alt="<?= $images[11]['alt_text'] ?>"
                 class="img-fluid rounded mt-4">
 
-            <a href="/pages/contact.php"
+            <a href="http://portfolio.local/pages/contact.php"
                 class="btn btn-warning btn-lg mt-4 mx-3">
                 Demander mon devis
             </a>

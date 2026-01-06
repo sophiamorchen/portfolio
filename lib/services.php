@@ -14,11 +14,11 @@ return $result ?: null;
 
 function getServices(PDO $pdo, ?string $category = null): array
 {
-        $sql = "SELECT services.*, images.path as images_path, images.alt_text as img_alt
-                FROM services 
-                JOIN images ON images.id = services.img_id
-                " . ($category ? "WHERE services.category = :category" : "") . "
-                ORDER BY services.id ASC";
+        $sql = "SELECT s.*, i.path as img_path, i.alt_text as img_alt
+                FROM services s
+                JOIN images i ON i.id = s.img_id
+                " . ($category ? "WHERE s.category = :category" : "") . "
+                ORDER BY s.id ASC";
 
         $query = $pdo->prepare($sql);
 

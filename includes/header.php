@@ -25,31 +25,18 @@ $currentPage = basename($_SERVER['SCRIPT_NAME']);
     <!-- HEADER -->
     <header class="site-header">
         <div class="container d-flex flex-column flex-md-row align-items-center justify-content-between">
-
             <div class="header-brand">
                 <h1 class="site-title"><?= HOUSE_LOGO ?></h1>
                 <span class="site-tagline">Entretien, bricolage & location de matériel professionnel</span>
             </div>
-
             <nav class="site-nav">
                 <?php
-
                 $currentPage = basename($_SERVER['SCRIPT_NAME']);
                 foreach ($mainMenu as $url => $label) {
                     $active = ($url == $_SERVER['REQUEST_URI'] || basename($url) == $currentPage) ? ' active' : '';
                     echo '<a href="' . BASE_URL . $url . '" class="nav-link' . $active . '">' . $label . '</a>';
                 }
-
-
-
                 ?>
-                <!-- <a href="/" class="nav-link">Accueil</a>
-                <a href="/pages/services.php" class="nav-link">Services</a>
-                <a href="/pages/locations.php" class="nav-link">Location de matériel</a>
-                <a href="/pages/devis.php" class="nav-link">Devis gratuit</a>
-                <a href="/pages/blog.php" class="nav-link">Blog</a>
-                <a href="/pages/contact.php" class="nav-link">Contact</a> -->
             </nav>
-
         </div>
     </header>
