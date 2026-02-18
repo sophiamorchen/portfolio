@@ -18,7 +18,7 @@ $images = getImages($pdo);
 <main class="container my-5">
     <!-- HERO SECTION -->
 
-    <section class="hero-section d-flex flex-column flex-md-row align-items-center gap-4 p-4 shadow-sm">
+    <section class="hero-section d-flex flex-md-row align-items-center gap-4 p-4 shadow-sm">
 
         <div class="flex-fill text-center">
             <h1 class="text-warning">Des outils et du savoir-faire pour chaque projet</h1>
@@ -28,7 +28,7 @@ $images = getImages($pdo);
 
             <h2 class="text-warning mt-3 display-1"><?= HOUSE_LOGO ?></h2>
         </div>
-        <img src="<?=$images[2]['path']?>" alt="<?=$images[2]['alt_text']?>" class="rounded img-fluid" style="max-width:15rem;">
+        <img src="<?= $images[2]['path'] ?>" alt="<?= $images[2]['alt_text'] ?>" class="rounded img-fluid" style="max-width:15rem;">
     </section>
 
 
@@ -37,14 +37,13 @@ $images = getImages($pdo);
     <!-- SECTION LOCATION DE MATÉRIEL -->
     <section class="location d-flex flex-column flex-wrap gap-4 mt-5 align-items-center">
         <!-- Titre principal -->
-        <h2 class="text-warning text-center mb-4">Location de matériel</h2>
+        <h2 class="text-center mb-4 text-warning">Location de matériel</h2>
 
         <!-- Texte introductif -->
-        <p class="lead text-center mt-3 text-warning">
+        <p class="lead text-center mt-3 fw-bold">
             Que ce soit pour le jardin, le bricolage ou vos petits et gros chantiers,
-            <strong>GaSo&Co</strong> vous propose une large gamme de matériel performant et entretenu.
-            Tondeuses, taille-haies, débroussailleuses, mini-pelles, camions-bennes et plus encore :
-            nous avons l’outil qu’il vous faut. Tous nos devis sont gratuits et personnalisés pour vos besoins.
+            <strong>GaSo&Co</strong> vous propose une large gamme de matériel professionnel.
+            Motobineuse, carotteuse diamant, compresseur à air et plus encore. Tous nos devis sont gratuits et personnalisés pour vos besoins.
         </p>
 
         <!-- Liste des outils -->
@@ -61,12 +60,12 @@ $images = getImages($pdo);
     </section>
 
     <!-- SECTION ENTRETIEN D'ESPACES VERTS ET TRAVAUX -->
-    <section class="maintenance mt-5 gap-4 d-flex flex-column align-items-center">
+    <section class="maintenance mt-5 gap-4 d-flex flex-column align-items-center fw-bold">
         <!-- Titre principal -->
         <h2 class="text-warning text-center mb-4">Nos prestations d’entretien et de travaux</h2>
 
         <!-- Texte introductif -->
-        <p class="text-center lead mb-5 text-warning">
+        <p class="text-center lead mb-5 fw-bold">
             Chez <strong>GaSo&Co</strong>, nous intervenons pour tous vos besoins :
             entretien d’espaces verts, travaux de bricolage et réparations diverses.
             Taille de haies, plantations, soins arboricoles, carrelage, parquet, peinture… et bien plus encore !
@@ -75,7 +74,7 @@ $images = getImages($pdo);
         </p>
 
         <!-- Liste des services -->
-        <div class="list-maintenance d-flex flex-wrap gap-4 justify-content-center fw-bold">
+        <div class="list-maintenance d-flex flex-wrap gap-4 justify-content-center">
             <?php foreach ($services as $service) { ?>
                 <article class="maintenance-item">
                     <img src="<?= $service['img_path'] ?>" alt="<?= $service['img_alt'] ?>" class="maintenance-img">

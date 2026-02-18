@@ -14,11 +14,11 @@ $locationsBricolage = getLocationsByCategory($pdo, 'bricolage');
     <section class="hero-section d-flex flex-column flex-md-row align-items-center gap-4 p-4 shadow-sm">
         <div class="flex-fill text-center">
             <h2 class="text-warning mb-4">Nos locations</h2>
-            <p class="lead text-warning fw-bold">
+            <p class="lead fw-bold">
                 Jardin, bricolage ou chantier : GaSo&Co met à votre disposition
                 du matériel professionnel, entretenu et prêt à l'emploi.
             </p>
-            <p class="text-warning mt-3">
+            <p class="mt-3 fw-bold">
                 Tarifs indicatifs – dégressifs selon la durée de location.
             </p>
         </div>
@@ -40,23 +40,6 @@ $locationsBricolage = getLocationsByCategory($pdo, 'bricolage');
                         class="tool-img">
                     <p class="tool-name"><?= $location['name'] ?></p>
                     <p class="tool-desc"><?= $location['description'] ?></p>
-
-                    <table class="table table-sm text-center mt-3">
-                        <thead>
-                            <tr>
-                                <th>Journée</th>
-                                <th>Journée Week-end</th>
-                                <th>Semaine</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><?= $location['prices']['day'] ?> €</td>
-                                <td><?= $location['prices']['week-end-day'] ?> €</td>
-                                <td><?= $location['prices']['week'] ?> €</td>
-                            </tr>
-                        </tbody>
-                    </table>
                 </article>
             <?php endforeach; ?>
         </div>
@@ -77,23 +60,6 @@ $locationsBricolage = getLocationsByCategory($pdo, 'bricolage');
                             class="tool-img">
                         <p class="tool-name"><?= $location['name'] ?></p>
                         <p class="tool-desc"><?= $location['description'] ?></p>
-
-                        <table class="table table-sm text-center mt-3">
-                            <thead>
-                                <tr>
-                                    <th>Journée</th>
-                                    <th>Journée Week-end</th>
-                                    <th>Semaine</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><?= $location['prices']['day'] ?> €</td>
-                                    <td><?= $location['prices']['week-end-day'] ?> €</td>
-                                    <td><?= $location['prices']['week'] ?> €</td>
-                                </tr>
-                            </tbody>
-                        </table>
                     </article>
                 <?php endforeach; ?>
             <?php endif; ?>

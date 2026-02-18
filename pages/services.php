@@ -17,11 +17,8 @@ $images = getImages($pdo);
     <!-- HERO SERVICES -->
     <section class="hero-section d-flex flex-column flex-md-row align-items-center gap-4 p-4 shadow-sm">
         <div class="flex-fill text-center">
-
             <h2 class="text-warning mb-4">Nos services</h2>
-            <h3 class="text-warning mt-3 display-1">Une solution adaptée à chaque projet</h3>
-
-            <p class="lead text-warning fw-bold">
+            <p class="lead fw-bold">
                 Que vous soyez un particulier ou un professionnel, nous vous accompagnons
                 dans vos travaux d’entretien, d’aménagement et de bricolage.
                 Chaque intervention fait l’objet d’un <strong>devis gratuit et personnalisé</strong>.
